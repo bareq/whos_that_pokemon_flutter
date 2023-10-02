@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:whos_that_pokemon_flutter/game_screen/bloc/game_screen_bloc.dart';
 import 'package:whos_that_pokemon_flutter/game_screen/widget/game_screen.dart';
 
 void main() {
@@ -32,7 +34,10 @@ class MyHomePage extends StatelessWidget {
         elevation: 4,
         title: const Text("Who's that Pokémon?"),
       ),
-      body: const GameScreen(),
+      body: BlocProvider(
+        create: (context) => GameScreenBloc(),
+        child: const GameScreen(),
+      ),
     );
   }
 }
