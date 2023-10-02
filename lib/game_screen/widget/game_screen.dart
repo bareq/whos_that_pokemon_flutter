@@ -1,19 +1,19 @@
 import 'package:flutter/widgets.dart';
+import 'package:whos_that_pokemon_flutter/game_screen/widget/answer_buttons/answer_buttons.dart';
+import 'package:whos_that_pokemon_flutter/game_screen/widget/pokemon_image/pokemon_image.dart';
 
 class GameScreen extends StatelessWidget {
   const GameScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
         child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text("Who's that Pokémon?", style: TextStyle(fontSize: 24)),
-        SizedBox(height: 16),
-        Image(image: AssetImage('assets/images/bulbasaur.png')),
-        SizedBox(height: 16),
-        Text("Tap to reveal", style: TextStyle(fontSize: 16)),
+        PokemonImage.shadow(),
+        AnswerButtons(),
       ],
     ));
   }
