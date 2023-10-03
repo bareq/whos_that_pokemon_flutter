@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$GameScreenState {
-  Pokemon? get currentPokemon => throw _privateConstructorUsedError;
+  Question? get currentQuestion => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $GameScreenStateCopyWith<GameScreenState> get copyWith =>
@@ -29,7 +29,7 @@ abstract class $GameScreenStateCopyWith<$Res> {
           GameScreenState value, $Res Function(GameScreenState) then) =
       _$GameScreenStateCopyWithImpl<$Res, GameScreenState>;
   @useResult
-  $Res call({Pokemon? currentPokemon});
+  $Res call({Question? currentQuestion});
 }
 
 /// @nodoc
@@ -45,13 +45,13 @@ class _$GameScreenStateCopyWithImpl<$Res, $Val extends GameScreenState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentPokemon = freezed,
+    Object? currentQuestion = freezed,
   }) {
     return _then(_value.copyWith(
-      currentPokemon: freezed == currentPokemon
-          ? _value.currentPokemon
-          : currentPokemon // ignore: cast_nullable_to_non_nullable
-              as Pokemon?,
+      currentQuestion: freezed == currentQuestion
+          ? _value.currentQuestion
+          : currentQuestion // ignore: cast_nullable_to_non_nullable
+              as Question?,
     ) as $Val);
   }
 }
@@ -64,7 +64,7 @@ abstract class _$$GameScreenStateImplCopyWith<$Res>
       __$$GameScreenStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Pokemon? currentPokemon});
+  $Res call({Question? currentQuestion});
 }
 
 /// @nodoc
@@ -78,13 +78,13 @@ class __$$GameScreenStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentPokemon = freezed,
+    Object? currentQuestion = freezed,
   }) {
     return _then(_$GameScreenStateImpl(
-      currentPokemon: freezed == currentPokemon
-          ? _value.currentPokemon
-          : currentPokemon // ignore: cast_nullable_to_non_nullable
-              as Pokemon?,
+      currentQuestion: freezed == currentQuestion
+          ? _value.currentQuestion
+          : currentQuestion // ignore: cast_nullable_to_non_nullable
+              as Question?,
     ));
   }
 }
@@ -92,14 +92,14 @@ class __$$GameScreenStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GameScreenStateImpl implements _GameScreenState {
-  const _$GameScreenStateImpl({this.currentPokemon});
+  const _$GameScreenStateImpl({this.currentQuestion});
 
   @override
-  final Pokemon? currentPokemon;
+  final Question? currentQuestion;
 
   @override
   String toString() {
-    return 'GameScreenState(currentPokemon: $currentPokemon)';
+    return 'GameScreenState(currentQuestion: $currentQuestion)';
   }
 
   @override
@@ -107,12 +107,12 @@ class _$GameScreenStateImpl implements _GameScreenState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GameScreenStateImpl &&
-            (identical(other.currentPokemon, currentPokemon) ||
-                other.currentPokemon == currentPokemon));
+            (identical(other.currentQuestion, currentQuestion) ||
+                other.currentQuestion == currentQuestion));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, currentPokemon);
+  int get hashCode => Object.hash(runtimeType, currentQuestion);
 
   @JsonKey(ignore: true)
   @override
@@ -123,11 +123,11 @@ class _$GameScreenStateImpl implements _GameScreenState {
 }
 
 abstract class _GameScreenState implements GameScreenState {
-  const factory _GameScreenState({final Pokemon? currentPokemon}) =
+  const factory _GameScreenState({final Question? currentQuestion}) =
       _$GameScreenStateImpl;
 
   @override
-  Pokemon? get currentPokemon;
+  Question? get currentQuestion;
   @override
   @JsonKey(ignore: true)
   _$$GameScreenStateImplCopyWith<_$GameScreenStateImpl> get copyWith =>

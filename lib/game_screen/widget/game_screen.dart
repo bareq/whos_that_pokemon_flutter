@@ -11,17 +11,17 @@ class GameScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final gameScreenBloc = context.watch<GameScreenBloc>();
-    final currentPokemon = gameScreenBloc.state.currentPokemon;
+    final currentQuestion = gameScreenBloc.state.currentQuestion;
     return Center(
         child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        if (currentPokemon == null)
+        if (currentQuestion == null)
           const CircularProgressIndicator()
         else ...[
           const Text("Who's that Pokémon?", style: TextStyle(fontSize: 24)),
-          PokemonImage.shadow(currentPokemon.spriteUrl),
-          const AnswerButtons(),
+          PokemonImage.shadow(currentQuestion.pokemonToBeGuessed.spriteUrl),
+          AnswerButtons(currentQuestion.answers),
         ]
       ],
     ));

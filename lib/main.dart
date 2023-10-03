@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:whos_that_pokemon_flutter/game_screen/bloc/game_screen_bloc.dart';
+import 'package:whos_that_pokemon_flutter/game_screen/di/game_screen_module.dart';
 import 'package:whos_that_pokemon_flutter/game_screen/widget/game_screen.dart';
 import 'package:whos_that_pokemon_flutter/pokemon/di/pokemon_module.dart';
 
 import 'di/di_configuration.dart';
 
 void main() {
-  DIConfiguration(modulesList: [PokemonModule()]).configure();
+  DIConfiguration(modulesList: [PokemonModule(), GameScreenModule()])
+      .configure();
   runApp(const MyApp());
 }
 

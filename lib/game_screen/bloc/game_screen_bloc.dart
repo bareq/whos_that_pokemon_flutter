@@ -1,24 +1,24 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:whos_that_pokemon_flutter/game_screen/use_case/get_question_use_case.dart';
 
-import '../../pokemon/use_case/get_random_pokemon_use_case.dart';
 import 'game_screen_state.dart';
 
 class GameScreenBloc extends Cubit<GameScreenState> {
-  final GetRandomPokemonUseCase _getRandomPokemonUseCase;
+  final GetQuestionUseCase _getQuestionUseCase;
 
-  GameScreenBloc(GetRandomPokemonUseCase getRandomPokemonUseCase)
-      : _getRandomPokemonUseCase = getRandomPokemonUseCase,
+  GameScreenBloc(GetQuestionUseCase getQuestionUseCase)
+      : _getQuestionUseCase = getQuestionUseCase,
         super(const GameScreenState()) {
-    getRandomPokemon();
+    getQuestion();
   }
 
-  Future<void> getRandomPokemon() async {
+  Future<void> getQuestion() async {
     try {
-      final pokemon = await _getRandomPokemonUseCase.execute();
-      emit(state.copyWith(currentPokemon: pokemon));
+      final question = await _getQuestionUseCase.execute();
+      emit(state.copyWith(currentQuestion: question));
     } catch (e) {
       print(e);
-      return getRandomPokemon();
+      return getQuestion();
     }
   }
 }
