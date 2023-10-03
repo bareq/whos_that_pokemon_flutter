@@ -7,4 +7,4 @@ class Pokemon {
   Pokemon(this.number, this.name, this.generation, this.spriteUrl);
 }
 
-enum Generation { I, II, III, IV, V, VI, VII, VIII, IX }
+enum Generation { i, ii, iii, iv, v, vi, vii, viii, ix }

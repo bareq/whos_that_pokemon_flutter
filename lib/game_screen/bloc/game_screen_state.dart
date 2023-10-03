@@ -1,7 +1,10 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:whos_that_pokemon_flutter/pokemon/model/pokemon.dart';
 
-class GameScreenState {
-  final Pokemon? currentPokemon;
+part 'game_screen_state.freezed.dart';
 
-  GameScreenState({this.currentPokemon});
+@freezed
+class GameScreenState with _$GameScreenState {
+  const factory GameScreenState({final Pokemon? currentPokemon}) =
+      _GameScreenState;
 }

@@ -21,20 +21,20 @@ class _PokemonApi implements PokemonApi {
   String? baseUrl;
 
   @override
-  Future<List<PokemonapiPokemonDataModel>> fetchPokemonById() async {
+  Future<PokemonapiPokemonDataModel> fetchPokemonById(int id) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<List<dynamic>>(
-        _setStreamType<List<PokemonapiPokemonDataModel>>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<PokemonapiPokemonDataModel>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/pokemon/{id}',
+              '/pokemon/${id}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -43,10 +43,7 @@ class _PokemonApi implements PokemonApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    var value = _result.data!
-        .map((dynamic i) =>
-            PokemonapiPokemonDataModel.fromJson(i as Map<String, dynamic>))
-        .toList();
+    final value = PokemonapiPokemonDataModel.fromJson(_result.data!);
     return value;
   }
 

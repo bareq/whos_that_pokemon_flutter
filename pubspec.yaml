@@ -25,6 +25,8 @@ dependencies:
   retrofit: '>=4.0.0 <5.0.0'
   logger: any  #for logging purpose
   dio: ^5.3.3
+  get_it: ^7.6.4
+  cached_network_image: ^3.3.0
 
 dev_dependencies:
   flutter_test:

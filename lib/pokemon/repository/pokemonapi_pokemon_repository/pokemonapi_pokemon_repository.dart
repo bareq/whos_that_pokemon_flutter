@@ -9,7 +9,7 @@ class PokemonApiPokemonRepository implements PokemonRepository {
   PokemonApiPokemonRepository(this._pokemonApiPokemonDataSource);
 
   @override
-  Future<List<Pokemon>> fetchPokemon() {
-    return _pokemonApiPokemonDataSource.fetchPokemon();
+  Future<Pokemon> fetchPokemonById(int id) async {
+    return await _pokemonApiPokemonDataSource.fetchPokemonById(id);
   }
 }
