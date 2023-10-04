@@ -15,11 +15,8 @@ abstract class PokemonImage extends StatelessWidget {
     return NormalPokemonImage(imageUrl: imageUrl);
   }
 
-  CachedNetworkImage getImage() {
-    return CachedNetworkImage(
-      placeholder: (context, url) => const CircularProgressIndicator(),
-      imageUrl: _imageUrl,
-    );
+  Widget getImage() {
+    return Image(image: CachedNetworkImageProvider(_imageUrl, scale: .5));
   }
 }
 

@@ -5,6 +5,11 @@ part 'game_screen_state.freezed.dart';
 
 @freezed
 class GameScreenState with _$GameScreenState {
-  const factory GameScreenState({final Question? currentQuestion}) =
-      _GameScreenState;
+  const factory GameScreenState.initial() = _Initial;
+
+  const factory GameScreenState.questionDisplayed(Question currentQuestion) =
+      _QuestionDisplayed;
+
+  const factory GameScreenState.answerDisplayed(Question currentQuestion, Answer clickedAnswer) =
+      _AnswerDisplayed;
 }

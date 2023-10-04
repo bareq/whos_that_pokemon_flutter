@@ -16,10 +16,52 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$GameScreenState {
-  Question? get currentQuestion => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $GameScreenStateCopyWith<GameScreenState> get copyWith =>
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(Question currentQuestion) questionDisplayed,
+    required TResult Function(Question currentQuestion, Answer clickedAnswer)
+        answerDisplayed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(Question currentQuestion)? questionDisplayed,
+    TResult? Function(Question currentQuestion, Answer clickedAnswer)?
+        answerDisplayed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Question currentQuestion)? questionDisplayed,
+    TResult Function(Question currentQuestion, Answer clickedAnswer)?
+        answerDisplayed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_QuestionDisplayed value) questionDisplayed,
+    required TResult Function(_AnswerDisplayed value) answerDisplayed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_QuestionDisplayed value)? questionDisplayed,
+    TResult? Function(_AnswerDisplayed value)? answerDisplayed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_QuestionDisplayed value)? questionDisplayed,
+    TResult Function(_AnswerDisplayed value)? answerDisplayed,
+    required TResult orElse(),
+  }) =>
       throw _privateConstructorUsedError;
 }
 
@@ -28,8 +70,6 @@ abstract class $GameScreenStateCopyWith<$Res> {
   factory $GameScreenStateCopyWith(
           GameScreenState value, $Res Function(GameScreenState) then) =
       _$GameScreenStateCopyWithImpl<$Res, GameScreenState>;
-  @useResult
-  $Res call({Question? currentQuestion});
 }
 
 /// @nodoc
@@ -41,72 +81,168 @@ class _$GameScreenStateCopyWithImpl<$Res, $Val extends GameScreenState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+}
 
-  @pragma('vm:prefer-inline')
+/// @nodoc
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$GameScreenStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
+
   @override
-  $Res call({
-    Object? currentQuestion = freezed,
+  String toString() {
+    return 'GameScreenState.initial()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(Question currentQuestion) questionDisplayed,
+    required TResult Function(Question currentQuestion, Answer clickedAnswer)
+        answerDisplayed,
   }) {
-    return _then(_value.copyWith(
-      currentQuestion: freezed == currentQuestion
-          ? _value.currentQuestion
-          : currentQuestion // ignore: cast_nullable_to_non_nullable
-              as Question?,
-    ) as $Val);
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(Question currentQuestion)? questionDisplayed,
+    TResult? Function(Question currentQuestion, Answer clickedAnswer)?
+        answerDisplayed,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Question currentQuestion)? questionDisplayed,
+    TResult Function(Question currentQuestion, Answer clickedAnswer)?
+        answerDisplayed,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_QuestionDisplayed value) questionDisplayed,
+    required TResult Function(_AnswerDisplayed value) answerDisplayed,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_QuestionDisplayed value)? questionDisplayed,
+    TResult? Function(_AnswerDisplayed value)? answerDisplayed,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_QuestionDisplayed value)? questionDisplayed,
+    TResult Function(_AnswerDisplayed value)? answerDisplayed,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
   }
 }
 
-/// @nodoc
-abstract class _$$GameScreenStateImplCopyWith<$Res>
-    implements $GameScreenStateCopyWith<$Res> {
-  factory _$$GameScreenStateImplCopyWith(_$GameScreenStateImpl value,
-          $Res Function(_$GameScreenStateImpl) then) =
-      __$$GameScreenStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({Question? currentQuestion});
+abstract class _Initial implements GameScreenState {
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-class __$$GameScreenStateImplCopyWithImpl<$Res>
-    extends _$GameScreenStateCopyWithImpl<$Res, _$GameScreenStateImpl>
-    implements _$$GameScreenStateImplCopyWith<$Res> {
-  __$$GameScreenStateImplCopyWithImpl(
-      _$GameScreenStateImpl _value, $Res Function(_$GameScreenStateImpl) _then)
+abstract class _$$QuestionDisplayedImplCopyWith<$Res> {
+  factory _$$QuestionDisplayedImplCopyWith(_$QuestionDisplayedImpl value,
+          $Res Function(_$QuestionDisplayedImpl) then) =
+      __$$QuestionDisplayedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Question currentQuestion});
+}
+
+/// @nodoc
+class __$$QuestionDisplayedImplCopyWithImpl<$Res>
+    extends _$GameScreenStateCopyWithImpl<$Res, _$QuestionDisplayedImpl>
+    implements _$$QuestionDisplayedImplCopyWith<$Res> {
+  __$$QuestionDisplayedImplCopyWithImpl(_$QuestionDisplayedImpl _value,
+      $Res Function(_$QuestionDisplayedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentQuestion = freezed,
+    Object? currentQuestion = null,
   }) {
-    return _then(_$GameScreenStateImpl(
-      currentQuestion: freezed == currentQuestion
+    return _then(_$QuestionDisplayedImpl(
+      null == currentQuestion
           ? _value.currentQuestion
           : currentQuestion // ignore: cast_nullable_to_non_nullable
-              as Question?,
+              as Question,
     ));
   }
 }
 
 /// @nodoc
 
-class _$GameScreenStateImpl implements _GameScreenState {
-  const _$GameScreenStateImpl({this.currentQuestion});
+class _$QuestionDisplayedImpl implements _QuestionDisplayed {
+  const _$QuestionDisplayedImpl(this.currentQuestion);
 
   @override
-  final Question? currentQuestion;
+  final Question currentQuestion;
 
   @override
   String toString() {
-    return 'GameScreenState(currentQuestion: $currentQuestion)';
+    return 'GameScreenState.questionDisplayed(currentQuestion: $currentQuestion)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GameScreenStateImpl &&
+            other is _$QuestionDisplayedImpl &&
             (identical(other.currentQuestion, currentQuestion) ||
                 other.currentQuestion == currentQuestion));
   }
@@ -117,19 +253,244 @@ class _$GameScreenStateImpl implements _GameScreenState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GameScreenStateImplCopyWith<_$GameScreenStateImpl> get copyWith =>
-      __$$GameScreenStateImplCopyWithImpl<_$GameScreenStateImpl>(
+  _$$QuestionDisplayedImplCopyWith<_$QuestionDisplayedImpl> get copyWith =>
+      __$$QuestionDisplayedImplCopyWithImpl<_$QuestionDisplayedImpl>(
           this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(Question currentQuestion) questionDisplayed,
+    required TResult Function(Question currentQuestion, Answer clickedAnswer)
+        answerDisplayed,
+  }) {
+    return questionDisplayed(currentQuestion);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(Question currentQuestion)? questionDisplayed,
+    TResult? Function(Question currentQuestion, Answer clickedAnswer)?
+        answerDisplayed,
+  }) {
+    return questionDisplayed?.call(currentQuestion);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Question currentQuestion)? questionDisplayed,
+    TResult Function(Question currentQuestion, Answer clickedAnswer)?
+        answerDisplayed,
+    required TResult orElse(),
+  }) {
+    if (questionDisplayed != null) {
+      return questionDisplayed(currentQuestion);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_QuestionDisplayed value) questionDisplayed,
+    required TResult Function(_AnswerDisplayed value) answerDisplayed,
+  }) {
+    return questionDisplayed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_QuestionDisplayed value)? questionDisplayed,
+    TResult? Function(_AnswerDisplayed value)? answerDisplayed,
+  }) {
+    return questionDisplayed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_QuestionDisplayed value)? questionDisplayed,
+    TResult Function(_AnswerDisplayed value)? answerDisplayed,
+    required TResult orElse(),
+  }) {
+    if (questionDisplayed != null) {
+      return questionDisplayed(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _GameScreenState implements GameScreenState {
-  const factory _GameScreenState({final Question? currentQuestion}) =
-      _$GameScreenStateImpl;
+abstract class _QuestionDisplayed implements GameScreenState {
+  const factory _QuestionDisplayed(final Question currentQuestion) =
+      _$QuestionDisplayedImpl;
+
+  Question get currentQuestion;
+  @JsonKey(ignore: true)
+  _$$QuestionDisplayedImplCopyWith<_$QuestionDisplayedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AnswerDisplayedImplCopyWith<$Res> {
+  factory _$$AnswerDisplayedImplCopyWith(_$AnswerDisplayedImpl value,
+          $Res Function(_$AnswerDisplayedImpl) then) =
+      __$$AnswerDisplayedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Question currentQuestion, Answer clickedAnswer});
+}
+
+/// @nodoc
+class __$$AnswerDisplayedImplCopyWithImpl<$Res>
+    extends _$GameScreenStateCopyWithImpl<$Res, _$AnswerDisplayedImpl>
+    implements _$$AnswerDisplayedImplCopyWith<$Res> {
+  __$$AnswerDisplayedImplCopyWithImpl(
+      _$AnswerDisplayedImpl _value, $Res Function(_$AnswerDisplayedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? currentQuestion = null,
+    Object? clickedAnswer = null,
+  }) {
+    return _then(_$AnswerDisplayedImpl(
+      null == currentQuestion
+          ? _value.currentQuestion
+          : currentQuestion // ignore: cast_nullable_to_non_nullable
+              as Question,
+      null == clickedAnswer
+          ? _value.clickedAnswer
+          : clickedAnswer // ignore: cast_nullable_to_non_nullable
+              as Answer,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AnswerDisplayedImpl implements _AnswerDisplayed {
+  const _$AnswerDisplayedImpl(this.currentQuestion, this.clickedAnswer);
 
   @override
-  Question? get currentQuestion;
+  final Question currentQuestion;
   @override
+  final Answer clickedAnswer;
+
+  @override
+  String toString() {
+    return 'GameScreenState.answerDisplayed(currentQuestion: $currentQuestion, clickedAnswer: $clickedAnswer)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AnswerDisplayedImpl &&
+            (identical(other.currentQuestion, currentQuestion) ||
+                other.currentQuestion == currentQuestion) &&
+            (identical(other.clickedAnswer, clickedAnswer) ||
+                other.clickedAnswer == clickedAnswer));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, currentQuestion, clickedAnswer);
+
   @JsonKey(ignore: true)
-  _$$GameScreenStateImplCopyWith<_$GameScreenStateImpl> get copyWith =>
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AnswerDisplayedImplCopyWith<_$AnswerDisplayedImpl> get copyWith =>
+      __$$AnswerDisplayedImplCopyWithImpl<_$AnswerDisplayedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(Question currentQuestion) questionDisplayed,
+    required TResult Function(Question currentQuestion, Answer clickedAnswer)
+        answerDisplayed,
+  }) {
+    return answerDisplayed(currentQuestion, clickedAnswer);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(Question currentQuestion)? questionDisplayed,
+    TResult? Function(Question currentQuestion, Answer clickedAnswer)?
+        answerDisplayed,
+  }) {
+    return answerDisplayed?.call(currentQuestion, clickedAnswer);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Question currentQuestion)? questionDisplayed,
+    TResult Function(Question currentQuestion, Answer clickedAnswer)?
+        answerDisplayed,
+    required TResult orElse(),
+  }) {
+    if (answerDisplayed != null) {
+      return answerDisplayed(currentQuestion, clickedAnswer);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_QuestionDisplayed value) questionDisplayed,
+    required TResult Function(_AnswerDisplayed value) answerDisplayed,
+  }) {
+    return answerDisplayed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_QuestionDisplayed value)? questionDisplayed,
+    TResult? Function(_AnswerDisplayed value)? answerDisplayed,
+  }) {
+    return answerDisplayed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_QuestionDisplayed value)? questionDisplayed,
+    TResult Function(_AnswerDisplayed value)? answerDisplayed,
+    required TResult orElse(),
+  }) {
+    if (answerDisplayed != null) {
+      return answerDisplayed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AnswerDisplayed implements GameScreenState {
+  const factory _AnswerDisplayed(
+          final Question currentQuestion, final Answer clickedAnswer) =
+      _$AnswerDisplayedImpl;
+
+  Question get currentQuestion;
+  Answer get clickedAnswer;
+  @JsonKey(ignore: true)
+  _$$AnswerDisplayedImplCopyWith<_$AnswerDisplayedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
