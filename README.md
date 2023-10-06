@@ -1,16 +1,26 @@
-# whos_that_pokemon_flutter
+
+# Who's that Pokemon Flutter
 
 A game based on the famous advertising cutscene.
 
-## Getting Started
+## Result
+![](https://raw.githubusercontent.com/bareq/whos_that_pokemon_flutter/main/result_animation.gif)
 
-This project is a starting point for a Flutter application.
+## Goals
+- Reproduce nostalgic game from a Pokemon anime series
+- Download Pokemon information from pokeapi, cache data
+- Learn Flutter with bloc library
 
-A few resources to get you started if this is your first Flutter project:
+## Tech specification
+Used packages:
+- **flutter_bloc** - used as state management
+- **freezed_annotation** - generates **fromJson**, **ToJson**, **copyWith** automatically for models. Generates **when** and **maybeWhen** methods for state classes
+- **retrofit** - defines REST client like java's retrofit
+- **dio** - HTTP client
+- **get_it** - di
+- **cached_network_imagel** - cahce images from web
+- **shared_preferences** - save settings as shared preferences on device
+- **settings_ui** - easy settings screen
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Interesting things about project
+- Cubit and freezed generated state classes work together great :)
