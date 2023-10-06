@@ -5,11 +5,14 @@ import 'package:whos_that_pokemon_flutter/game_screen/bloc/game_screen_bloc.dart
 import 'package:whos_that_pokemon_flutter/game_screen/di/game_screen_module.dart';
 import 'package:whos_that_pokemon_flutter/game_screen/widget/game_screen.dart';
 import 'package:whos_that_pokemon_flutter/pokemon/di/pokemon_module.dart';
+import 'package:whos_that_pokemon_flutter/settings/bloc/settings_bloc.dart';
+import 'package:whos_that_pokemon_flutter/settings/di/settings_module.dart';
 
 import 'di/di_configuration.dart';
 
 void main() {
-  DIConfiguration(modulesList: [PokemonModule(), GameScreenModule()])
+  DIConfiguration(
+          modulesList: [PokemonModule(), GameScreenModule(), SettingsModule()])
       .configure();
   runApp(const MyApp());
 }
@@ -38,14 +41,16 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final getIt = GetIt.instance;
     return Scaffold(
-      appBar: AppBar(
-        elevation: 4,
-        title: const Text("Who's that Pokémon?"),
-      ),
-      body: BlocProvider(
-        create: (context) => GameScreenBloc(getIt.get()),
-        child: const GameScreen(),
-      ),
-    );
+        body: MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => GameScreenBloc(getIt.get()),
+        ),
+        BlocProvider(
+          create: (context) => SettingsBloc(getIt.get()),
+        ),
+      ],
+      child: const GameScreen(),
+    ));
   }
 }

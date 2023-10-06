@@ -16,7 +16,7 @@ abstract class PokemonImage extends StatelessWidget {
   }
 
   Widget getImage() {
-    return Image(image: CachedNetworkImageProvider(_imageUrl, scale: .5));
+    return Image(image: CachedNetworkImageProvider(_imageUrl, scale: .3));
   }
 }
 
