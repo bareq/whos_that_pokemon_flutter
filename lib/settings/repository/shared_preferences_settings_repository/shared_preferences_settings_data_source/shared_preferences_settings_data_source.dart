@@ -10,4 +10,9 @@ class SharedPreferencesSettingsDataSource {
       animeBackground: animeBackground,
     );
   }
+
+  Future<void> saveGameSettings(GameSettings updatedSettings) async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setBool('animeBackground', updatedSettings.animeBackground);
+  }
 }

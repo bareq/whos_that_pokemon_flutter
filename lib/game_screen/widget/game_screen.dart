@@ -6,6 +6,7 @@ import 'package:whos_that_pokemon_flutter/game_screen/widget/pokemon_image/pokem
 import 'package:whos_that_pokemon_flutter/settings/model/game_settings.dart';
 
 import '../../settings/bloc/settings_bloc.dart';
+import '../../settings/widget/settings_screen.dart';
 import '../bloc/game_screen_bloc.dart';
 
 class GameScreen extends StatelessWidget {
@@ -15,13 +16,42 @@ class GameScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final gameScreenBloc = context.watch<GameScreenBloc>();
     final gameSettingsBloc = context.watch<SettingsBloc>();
-    return Center(
-        child: gameScreenBloc.state.when(
-            initial: () => const CircularProgressIndicator(),
-            questionDisplayed: (question) =>
-                getQuestionWidget(question, context),
-            answerDisplayed: (question, clickedAnswer) =>
-                getAnswerWidget(question, context)));
+    return Column(
+      children: [
+        Container(
+          color: gameSettingsBloc.state.maybeWhen(
+              settingsLoaded: (gameSettings) => gameSettings.animeBackground
+                  ? Color.fromRGBO(255, 79, 55, 1.0)
+                  : null,
+              orElse: () => null),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => BlocProvider.value(
+                                  value: gameSettingsBloc,
+                                  child: SettingsScreen(),
+                                )));
+                  },
+                  icon: const Icon(Icons.settings))
+            ],
+          ),
+        ),
+        Expanded(
+          child: Center(
+              child: gameScreenBloc.state.when(
+                  initial: () => const CircularProgressIndicator(),
+                  questionDisplayed: (question) =>
+                      getQuestionWidget(question, context),
+                  answerDisplayed: (question, clickedAnswer) =>
+                      getAnswerWidget(question, context))),
+        ),
+      ],
+    );
   }
 
   getQuestionWidget(Question question, BuildContext context) {
@@ -38,20 +68,6 @@ class GameScreen extends StatelessWidget {
         settingsLoaded: (gameSettings) =>
             getAnswerWidgetWithSettings(question, gameSettings, context),
         orElse: () {});
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text("That's ${question.pokemonToBeGuessed.name}!",
-            style: TextStyle(fontSize: 24)),
-        PokemonImage.normal(question.pokemonToBeGuessed.spriteUrl),
-        const AnswerButtons(),
-        ElevatedButton(
-            onPressed: () {
-              context.read<GameScreenBloc>().nextQuestion();
-            },
-            child: Text("Next"))
-      ],
-    );
   }
 
   getQuestionWidgetWithSettings(Question question, GameSettings gameSettings) {

@@ -1,5 +1,8 @@
-class GameSettings {
-  final bool animeBackground;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  GameSettings({required this.animeBackground});
+part 'game_settings.freezed.dart';
+
+@freezed
+class GameSettings with _$GameSettings {
+  const factory GameSettings({required bool animeBackground}) = _GameSettings;
 }

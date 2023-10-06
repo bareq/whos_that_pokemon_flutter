@@ -47,10 +47,10 @@ class MyHomePage extends StatelessWidget {
           create: (context) => GameScreenBloc(getIt.get()),
         ),
         BlocProvider(
-          create: (context) => SettingsBloc(getIt.get()),
+          create: (context) => SettingsBloc(getIt.get(), getIt.get()),
         ),
       ],
-      child: const GameScreen(),
+      child: SafeArea(child: const GameScreen()),
     ));
   }
 }

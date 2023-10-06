@@ -183,6 +183,8 @@ abstract class _$$SettingsLoadedImplCopyWith<$Res> {
       __$$SettingsLoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({GameSettings settings});
+
+  $GameSettingsCopyWith<$Res> get settings;
 }
 
 /// @nodoc
@@ -204,6 +206,14 @@ class __$$SettingsLoadedImplCopyWithImpl<$Res>
           : settings // ignore: cast_nullable_to_non_nullable
               as GameSettings,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $GameSettingsCopyWith<$Res> get settings {
+    return $GameSettingsCopyWith<$Res>(_value.settings, (value) {
+      return _then(_value.copyWith(settings: value));
+    });
   }
 }
 

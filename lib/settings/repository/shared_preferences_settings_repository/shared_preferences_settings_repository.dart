@@ -14,4 +14,9 @@ class SharedPreferencesSettingsRepository extends GameSettingsRepository {
   Future<GameSettings> getGameSettings() async {
     return await _dataSource.getGameSettings();
   }
+
+  @override
+  void saveGameSettings(GameSettings updatedSettings) {
+    _dataSource.saveGameSettings(updatedSettings);
+  }
 }
